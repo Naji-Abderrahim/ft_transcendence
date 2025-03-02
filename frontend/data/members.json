@@ -1,0 +1,34 @@
+[
+	{
+		"login": "yloutfi",
+		"name": "Yahya Loutfi",
+		"role": "Frontend Developer",
+		"description": "As a frontend developer, I have focused on creating a seamless and efficient user experience for the ping pong website.",
+		"github": "https://github.com/LoutfiDev",
+		"linkedin": "https://www.linkedin.com/in/yahia-loutfi-b939a4231/"
+	},
+	{
+		"login": "anaji",
+		"name": "Abderrahim Naji",
+		"role": "Backend Developer",
+		"description": "As a backend developer, I have focused on creating a secure and efficient user experience for the ping pong website.",
+		"github": "https://github.com/anaji",
+		"linkedin": "https://www.linkedin.com/in/anaji"
+	},
+	{
+		"login": "melhadou",
+		"name": "Mohamed Elhadouch",
+		"role": "Game Developer",
+		"description": "As a pong-game developer, I have focused on creating a seamless and efficient user experience for the ping pong website.",
+		"github": "https://github.com/melhadouch",
+		"linkedin": "https://www.linkedin.com/in/mohamed-elhadouch-0000000000/"
+	},
+	{
+		"login": "aakhtab",
+		"name": "Abdessamad Akhtab",
+		"role": "Game Developer",
+		"description": "As a card-game developer, I have focused on creating a seamless and efficient user experience for the ping pong website.",
+		"github": "https://github.com/aakhtab",
+		"linkedin": "https://www.linkedin.com/in/abdessamad-akhtab-0000000000/"
+	}
+]

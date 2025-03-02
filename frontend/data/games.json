@@ -1,0 +1,49 @@
+[
+	{
+		"name": "Cyberpong",
+		"logo": "/assets/images/pongLogo.webp",
+		"description": "Cyberpong is a fast-paced, action-packed game that combines elements of soccer and pong. The goal is to score points by getting the ball past your opponent's goalkeeper.",
+		"rules" : 
+		[
+			{
+				"icon":"/assets/icons/vs.svg",
+				"rule": "One-on-One Matches",
+				"description": "You face off against the computer or local/remote players in one-on-one matches. The first player to reach 5 points wins the match."
+			},
+			{
+				"icon":"/assets/icons/shield.svg",
+				"rule": "Keep Your Net Secure",
+				"description": "The soccer ball bounces off a slowly moving goalkeeper, so you'll need to anticipate its trajectory to make saves, using the arrow keys."
+			},
+			{
+				"icon":"/assets/icons/tournament.svg",
+				"rule": "Epic Tournament Showdowns",
+				"description": "Organize your own tournaments, whether with friends in person or online. Challenge players near and far!"
+			}
+		]
+	},
+
+	{
+		"name": "Cybertrap",
+		"logo": "/assets/images/cardLogo.webp",
+		"description": "Cybertrap is a strategic card game that combines elements of poker and war. The goal is to avoid collecting trap cards while collecting as many cards as possible.",
+		"rules" : 
+		[
+			{
+				"icon":"/assets/icons/vs.svg",
+				"rule": "One-on-One Matches",
+				"description": "You face off against the computer or local/remote players in one-on-one matches. The first player to reach 3 points wins the match."
+			},
+			{
+				"icon": "/assets/icons/games-card.svg",
+				"rule": "Card Distribution",
+				"description": "Each player receives half of a shuffled deck. The game is played with standard playing cards, and the goal is to avoid collecting trap cards."
+			},
+			{
+				"icon": "/assets/icons/swords.svg",
+				"rule": "Battle Mechanics",
+				"description": "Players simultaneously reveal their top cards. The higher card wins, and the winner takes both cards. Aces are highest, 2s are lowest."
+			}
+		]
+	}
+]

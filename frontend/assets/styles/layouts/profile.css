@@ -1,0 +1,129 @@
+@import url("/assets/styles/components/nav-bar.css");
+
+
+a {
+    text-decoration: none !important;
+}
+
+.profile-page{
+	background-color: var(--black);
+	height: 100vh;
+}
+
+.profile-conrainer{
+	margin-top: 10vh;
+	height: 90vh;
+}
+
+/* Profile Header */
+
+.profile-header{
+	height: 30vh;
+	background-color: var(--background-surface);
+	border: 2px solid var(--blue);
+	border-radius: 25px;
+	position: relative;
+	overflow: visible;
+}
+
+/* Profile Section */
+
+.profile-info{
+	justify-content: flex-start;
+}
+
+.profile-info .login {
+    font-family: 'OrbitronRegular';
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    color: var(--white);
+}
+
+.profile-info .full-name {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: var(--white);
+    opacity: 0.8;
+}
+
+.profile-info .email {
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    color: var(--white);
+    opacity: 0.6;
+}
+
+.profile-image {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    z-index: 1;
+}
+
+.profile-image img {
+    width: clamp(250px, 35vw, 300px);
+    object-fit: cover;
+}
+
+.play-button {
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+	width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 0.5rem;
+    font-family: 'OrbitronRegular';
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
+    transition: transform 0.3s ease;
+    margin-top: 1rem;
+}
+
+.play-button:hover {
+    transform: translateY(-2px);
+}
+
+/* Stats Section */
+
+.stats-section {
+	justify-content: flex-end;
+}
+
+.stat-card {
+	display: flex;
+    align-items: center;
+    padding: 0.2rem;
+    gap: 1rem;
+}
+
+.stat-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-icon img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+}
+
+.stat-info {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.stat-value, .stat-label {
+    color: var(--white);
+    font-family: 'OrbitronRegular';
+    font-size: clamp(1rem, 1.2vw, 1.5rem);
+}
+
+.stat-label {
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+

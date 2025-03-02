@@ -1,0 +1,112 @@
+services:
+  frontend:
+    build:  ./frontend/
+    image: frontend:Ai
+    container_name: frontend
+    volumes:
+      - /home/Airs/Desktop/merge_front/frontend:/var/www/app:ro
+      - /home/Airs/Desktop/merge_front/frontend/conf/nginx.conf:/etc/nginx/http.d/default.conf:ro
+    networks:
+      - docker-network
+    restart: on-failure
+    depends_on:
+      - postgresql
+      - auth
+      - user
+    ports:
+      - 8080:80
+    # env_file:
+    #   - .env
+    init: true
+
+  nginx:
+    build:  ./nginx/
+    image: nginx:Ai
+    container_name: nginx
+    # volumes:
+    #   - Wordpress:/var/www/wordpress
+    networks:
+      - docker-network
+    restart: on-failure
+    depends_on:
+      - postgresql
+      - auth
+      - user
+    # env_file:
+    #   - .env
+    ports:
+      - 443:443
+    init: true
+
+  postgresql:
+    build:  ./postgresql/
+    image: postgresql:Ai
+    container_name: postgresql
+    volumes:
+      - type: volume
+        source: db-data
+        target: /var/lib/postgresql/14/data/
+    networks:
+      - docker-network
+    restart: on-failure
+    env_file:
+      - ./backend/.env-example
+    ports:
+      - 5432
+    init: true
+
+  auth:
+    build:  ./backend/Auth/
+    image: auth:Ai
+    container_name: auth
+    # volumes:
+    #   - Wordpress:/var/www/wordpress
+    networks:
+      - docker-network
+    restart: on-failure
+    depends_on:
+      - postgresql
+    env_file:
+      - ./backend/.env-example
+
+    ports:
+      - 8001:8001
+    init: true
+
+  user:
+    build:  ./backend/User/
+    image: user:Ai
+    container_name: user
+    # volumes:
+    #   - Wordpress:/var/www/wordpress
+    networks:
+      - docker-network
+    restart: on-failure
+    depends_on:
+      - postgresql
+    env_file:
+      - ./backend/.env-example
+    ports:
+      - 8002:8002
+    init: true
+
+networks:
+  docker-network:
+    name: docker-network
+
+volumes:
+  db-data:
+#   maria-vol:
+#     name: mariadb-vol
+#     driver: local
+#     driver_opts:
+#       o: bind
+#       type: none
+#       device: /home/anaji/data/db2
+#   Wordpress:
+#     name: wordpress-vol
+#     driver: local
+#     driver_opts:
+#       o: bind
+#       type: none
+#       device: /home/anaji/data/wordpress/

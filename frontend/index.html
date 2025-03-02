@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ft_tranc</title>
+
+	<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css"/>
+	<link rel="stylesheet" href="/assets/styles/style.css"/>
+   
+    <script defer src="main.js" type="module"></script>
+</head>
+
+<body>
+    <div class="container-fluid p-0 min-vh-100">
+        <div class="row g-0 min-vh-100">
+            <div class="col-1 position-fixed h-100">
+                <div class="sidebar h-100">
+                    <img
+                    src="./assets/images/logo.webp"
+                    alt="logo"
+                    class="sidebar-logo"
+                    />
+                    <div class="sidebar-values">
+						<span class="value">entertain</span>
+						<span class="value">learn</span>
+						<span class="value">motivate</span>
+						<span class="value">inspire</span>
+                        <span class="value">create</span>
+                    </div>
+                    <div class="sidebar-footer">
+                        <img
+                        src="./assets/icons/discord.svg"
+                        alt="discord"
+                        class="sidebar-footer-icon"
+                        />
+                        <img
+                        src="./assets/icons/reddit.svg"
+                        alt="reddit"
+                        class="sidebar-footer-icon"
+                        />
+                        <img
+                        src="./assets/icons/twitch.svg"
+                        alt="twitch"
+                        class="sidebar-footer-icon"
+                        />
+                        <div class="sidebar-footer-copyrights">
+                            <div class="copyright-container">
+                                <span>2024</span>
+                                <img
+                                src="./assets/icons/copyright.svg"
+                                alt="copyright-icon"
+                                class="copyright-icon"
+                                />
+                            </div>
+                            <span class="copyright-text">dada everywhere</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-11 offset-1 min-vh-100">
+                <div class="main-view">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Layouts -->
+    <template id="landing-page-template">
+        <div class="d-flex flex-column min-vh-100">
+            <div class="home-navbar d-flex justify-content-center align-items-center w-100 position-fixed top-0">
+                <div class="home-nav-links">
+                    <span class="nav-link active" id="home-link">Home</span>
+                    <span class="nav-link" id="games-link">Games</span>
+                    <span class="nav-link" id="team-link">Team</span>
+                </div>
+            </div>
+            <div class="home-main-view overflow-y-auto">
+                <section class="about-section d-flex justify-content-between align-items-center py-3" id="home">
+                    <div class="about-left-section">
+                        <div class="member">
+                            <span class="member-speciality">front-end developer</span>
+                            <span class="member-name">Yahya Loutfi</span>
+                        </div>
+                        <div class="member">
+                            <span class="member-speciality">back-end developer</span>
+                            <span class="member-name">Abderrahim Naji</span>
+                        </div>
+                        <div class="member">
+                            <span class="member-speciality">game developers</span>
+                            <span class="member-name">Mohamed Elhadouchi</span>
+                            <span class="member-name">Abdessamad Akhtab</span>
+                        </div>
+                    </div>
+                    <div class="about-right-section">
+                        <div class="text-elements">
+                            <span class="text1">We are</span>
+                            <span class="text2">limit</span>
+                            <span class="text3">less</span>
+                        </div>
+                        <div class="line"></div>
+                        <span class="description">
+                            Learning is the process of acquiring new, or modifying existing
+                            knowledge, behaviors, values, skills or preferences. The ability
+                            to learn is processed with humans, animal or cyborgs.
+                        </span>
+                    </div>
+                </section>
+                <section class="games-section d-flex justify-content-between align-items-center py-3" id="games">
+                    <div class="games-left-section d-flex flex-column justify-content-center">
+                        <div class="content-wrapper d-flex flex-column justify-content-center">
+                            <span class="text1">Let's Dive In!</span>
+                            <span class="text2">OUR MISSION</span>
+                            <span class="text3">
+                                At [Your Platform Name], we believe in the power of play. Our
+                                mission is to revive the classic joy of Pong, bringing together
+                                players from around the world in a vibrant online community. We
+                                strive to create an inclusive space where everyone can enjoy
+                                friendly competition, connect with others, and relive the
+                                nostalgia of this timeless game
+                            </span>
+                            <div class="button d-flex align-items-center">
+                                <div class="play-icon">
+                                    <img
+                                    src="./assets/icons/play-buttton.svg"
+                                    alt="play-buttton"
+                                    class="play-buttton"
+                                    />
+                                </div>
+                                <span class="text4">Get Started!</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="games-right-section d-flex justify-content-center align-items-center">
+                        <div class="frame-container position-relative">
+                            <div class="frame1"></div>
+                            <div class="frame2"></div>
+                            <div class="frame3"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="team-section d-flex flex-column justify-content-between align-items-center py-3" id="team">
+                    <div class="team-title-block">
+                        <span class="title1">meet</span>
+                        <span class="title2">our</span>
+                        <span class="title3">team</span>
+                    </div>
+                    <div class="team-members-block d-flex flex-column justify-content-between align-items-center">
+                        <div class="upper-block" id="upper-block">
+                        </div>
+                        <div class="lower-block">
+                            <div class="team-member team-member-right" id="anaji">
+                                <div class="member-image-container">
+                                    <img
+                                    src="./assets/images/anaji.webp"
+                                    alt="image"
+                                    class="member-image"
+                                    />
+                                </div>
+                            </div>
+                            <div class="team-member team-member-middle" id="aakhtab">
+                                <div class="member-image-container">
+                                    <img
+                                    src="./assets/images/aakhtab.webp"
+                                    alt="image"
+                                    class="member-image"
+                                    />
+                                </div>
+                            </div>
+                            <div class="team-member team-member-left" id="melhadou">
+                                <div class="member-image-container">
+                                    <img
+                                    src="./assets/images/melhadou.webp"
+                                    alt="image"
+                                    class="member-image"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="scrollbar d-flex justify-content-center align-items-center position-fixed">
+                <div class="scrollbar-track"></div>
+                <div class="scrollbar-thumb"></div>
+            </div>
+        </div>
+    </template>
+    
+    <template id="team-member-template">
+        <div class="team-member-active d-flex flex-column justify-content-center align-items-center">
+            <div class="member-image-container">
+                <img
+                src=""
+                alt="image"
+                class="member-image"
+                />
+                <div class="member-description d-flex flex-column justify-content-center align-items-center">
+                    <div class="member-description-social">
+                        <a href="" target="_blank">
+                            <img
+                            src="./assets/icons/github.svg"
+                            alt="github"
+                            class="member-description-social-icon github-icon"
+                            />
+                        </a>
+                        <a href="" target="_blank">
+                            <img
+                            src="./assets/icons/linkedin.svg"
+                            alt="linkedin"
+                            class="member-description-social-icon linkedin-icon"
+                            />
+                        </a>
+                    </div>
+                    <span class="member-description-text"></span>
+                </div>
+            </div>
+            <div class="member-info d-flex flex-column justify-content-center align-items-center">
+                <span class="member-name"></span>
+                <span class="member-role"></span>
+            </div>
+        </div>
+    </template>
+
+    <template id="home-template">
+        <div class="home-container d-flex flex-column min-vh-100 position-relative">
+            <div class="nav-bar-container w-100">
+            </div>
+            <div class="game-info d-flex justify-content-between align-items-center px-5">
+                <div class="game-logo d-flex flex-column justify-content-center align-items-center w-50 h-75">
+                    <div class="image-container">
+                        <img
+                        src=""
+                        alt="game-image"
+                        class="game-image"
+                        />
+                    </div>
+                    <div class="description">
+                        <span class="title">see game infos</span>
+                        <span class="text"></span>
+                    </div>
+                </div>
+                <div class="rules d-flex flex-column justify-content-center align-items-center w-50 h-75">
+                </div>
+            </div>
+            <div class="footer-section d-flex justify-content-between align-items-center">
+                <div class="footer-play-button d-flex justify-content-between align-items-center">
+                    <div class="play-icon">
+                        <img
+                        src="./assets/icons/play-buttton.svg"
+                        alt="play-buttton"
+                        class="play-buttton"
+                        />
+                    </div>
+                    <span class="text">Play Now</span>
+                </div>
+                <div class="footer-statics">
+                    <div class="assist">
+                        <span class="title">GP</span>
+                        <span class="score">--</span>
+                    </div>
+                    <div class="win">
+                        <span class="title">win</span>
+                        <span class="score">--</span>
+                    </div>
+                    <div class="lose">
+                        <span class="title">lose</span>
+                        <span class="score">--</span>
+                    </div>
+                </div>
+                <div class="footer-swip-buttons">
+                    <img
+                        src="./assets/icons/arrow-left.svg"
+                        alt="arrow-left"
+                        class="swip-button arrow-left"
+                        id="left"
+                    />
+                    <img
+                        src="./assets/icons/arrow-right.svg"
+                        alt="arrow-right"
+                        class="swip-button arrow-right"
+                        id="right"
+                    />
+                </div>
+            </div> 
+        </div>
+    </template>
+
+    <template id="profile-template">	
+        <div class="profile-page d-flex flex-column min-vh-100">
+            <div class="nav-bar-container w-100">
+            </div>
+            <div class="profile-container d-flex flex-column align-items-center justify-content-center w-75 px-3">
+                <!-- <header class="profile-header d-flex justify-content-between align-items-center w-100 p-4"> 
+            
+                    <div class="profile-section d-flex flex-column w-25make">
+                        <div class="profile-image">
+                            <img src="" alt="Profile picture" />
+                        </div>
+                        <div class="profile-info d-flex flex-column">
+                            <h2 class="login fw-bold mb-2"></h2>
+                            <span class="full-name text-secondary"></span>
+                            <span class="email text-secondary"></span>
+                            <button class="play-button">Play Now</button>
+                        </div>
+                     </div> -->
+
+                    <!-- <div class="stats-section d-flex flex-column w-25"> -->
+                        <!-- Victory Stats -->
+                        <!-- <div class="stat-card">
+                            <div class="stat-icon">
+                                <img src="./assets/icons/success.svg" alt="Victory" />
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">10</span>
+                                <span class="stat-label">Victory</span>
+                            </div>
+                        </div> -->
+
+                        <!-- Defeat Stats -->
+                        <!-- <div class="stat-card">
+                            <div class="stat-icon">
+                                <img src="./assets/icons/queen.svg" alt="Defeat" />
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">05</span>
+                                <span class="stat-label">Defeat</span>
+                            </div>
+                        </div> -->
+
+                        <!-- Assist Stats -->
+                        <!-- <div class="stat-card">
+                            <div class="stat-icon">
+                                <img src="./assets/icons/gamepad.svg" alt="Assist" />
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">15</span>
+                                <span class="stat-label">Assist</span>
+                            </div>
+                        </div> -->
+
+                        <!-- Personal Best Stats -->
+                        <!-- <div class="stat-card">
+                            <div class="stat-icon">
+                                <img src="./assets/icons/timeRecord.svg" alt="Personal Best" />
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">10</span>
+                                <span class="stat-label">PB</span>
+                            </div>
+                        </div> -->
+                    <!-- </div> -->
+                <!-- </header> -->
+
+                <!--
+                <div class="filtre">
+                        <div class="banner">
+                            <span class="">Live score</span>
+                            <div class="calendar">
+                                <img
+                                src="./assets/icons/calendar.svg"
+                                alt="calendar-icon"
+                                class="calendar-icon"
+                                />
+                                <span class="month">December</span>
+                            </div>
+                        </div>
+                        <div class="days-slider">
+                             will be filled with day component 
+                        </div>
+                    </div>
+                    <div class="match-records">
+                        will be filled with match-record component
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="achievements">
+                        <span class="">Achievement rewards</span>
+                        <div class="slider">
+                            <img
+                            src="public/external/rectangle142244-dkc-200h.png"
+                            alt="Rectangle142244"
+                            class="rectangle14"
+                            />
+                            <img
+                            src="public/external/rectangle152244-6yeb-200h.png"
+                            alt="Rectangle152244"
+                            class="rectangle15"
+                            />
+                            <img
+                            src="public/external/rectangle132244-7wrt-300h.png"
+                            alt="Rectangle132244"
+                            class="rectangle131"
+                            />
+                        </div>
+                    </div>
+                    <div class="statistics">
+                        <span class="">Your Statistics</span>
+                        <img
+                        src="public/external/rectangle132254-yr1m-200h.png"
+                        alt="Rectangle132254"
+                        class="rectangle132"
+                        />
+                    </div>
+                </div> --> 
+            </div>
+        </div>
+    </template>
+    <template id="auth-template">
+        <div class="auth-container d-flex flex-column align-items-center justify-content-center min-vh-100 min-vw-100">
+            <div class="user-image-container d-flex align-items-center justify-content-center">
+                <img
+                src=""
+                alt="user-image"
+                class="user-image"
+                />
+            </div>
+            <div class="welcome-text">
+                <span class="text">Welcome again</span>
+                <span class="text user-name"></span>
+                <span class="text">!</span>
+            </div>
+            <div class="input-feild d-flex align-items-center">
+                <input type="text" placeholder="Enter Authentication code" class="input" />
+                <div class="button button-verify d-flex align-items-center justify-content-center">
+                    <span class="text">verify</span>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="invalid-path-template">
+        <h1>404 not found</h1>
+    </template>
+
+	<!-- Components -->
+    <template id="two-factor-template">
+		<div class="two-factor-section position-absolute top-50 start-50 translate-middle">
+        </div>
+    </template>
+	<template id="enable2fa-step1-template">
+		<div class="enable2fa-step1 d-flex flex-column align-items-center justify-content-center w-100 p-5">
+			<div class="step-icon-container d-flex align-items-center justify-content-center">
+                <img
+                    src="./assets/icons/scan.svg"
+                    alt="scan-icon"
+                    class="step-icon"
+                />
+            </div>
+			<div class="heading">
+				<span class="title">
+					Turn on Two Factor Authentication
+				</span>
+				<span class="description">
+					open Authenticator and chose scan barcode.
+				</span>
+			</div>
+			<div class="scan-code">
+                <img
+				src=""
+				alt="qr-code"
+				class="qr-code"
+                />
+            </div>
+			<div class="button button-continue d-flex align-items-center justify-content-center">
+				<span class="text">continue</span>
+				<img
+					src="./assets/icons/back-arrow.svg"
+					alt="right-arrow-icon"
+					class="right-arrow-icon"
+				/>
+			</div>
+		</div>
+	</template>
+	<template id="enable2fa-step2-template">
+		<div class="enable2fa-step2 d-flex flex-column align-items-center justify-content-center w-100 p-5">
+			<div class="step-icon-container d-flex align-items-center justify-content-center">
+                <img
+				src="./assets/icons/2fa.svg"
+				alt="two-factor-icon"
+				class="step-icon"
+                />
+            </div>
+			<div class="heading">
+				<span class="title">
+					Verify Authentication Code
+				</span>
+				<span class="description">
+					Enter the 6-degit code in authenticator.
+				</span>
+			</div>
+			<div class="inputs d-flex align-items-center justify-content-between">
+				<input type="text" placeholder="0" class="input" />
+				<input type="text" placeholder="0" class="input" />
+				<input type="text" placeholder="0" class="input" />
+                <span class="separator">-</span>
+				<input type="text" placeholder="0" class="input" />
+				<input type="text" placeholder="0" class="input" />
+				<input type="text" placeholder="0" class="input" />
+			</div>
+			<div class="button button-verify d-flex align-items-center justify-content-center">
+				<span class="text">verify</span>
+			</div>
+		</div>
+	</template>
+	<template id="profile-setting-template">
+		<div class="profile-setting">
+			<div class="2fa">
+				<img
+					src="public/external/image2faicon2455-scqj-200h.png"
+					alt="2fa-disable-icon"
+					class="2fa-disable-icon"
+				/>
+				<span class="text">Enable 2FA</span>
+			</div>
+			<div class="log-out">
+				<img
+					src="./assets/icons/log-out.svg"
+					alt="log-out-icon"
+					class="log-out-icon"
+				/>
+				<span class="text">Logout</span>
+			</div>
+		</div>
+	</template>
+
+	<template id="nav-bar-template">
+        <div class="nav-bar d-flex align-items-center justify-content-between w-100 py-3 px-5">
+            <a href="" class="link">
+                <div class="back-button d-flex align-items-center px-3">
+                    <img        
+                    src="/assets/icons/back-arrow.svg"
+                    alt="back-icon"
+                    class="back-icon"
+                    />
+                    <span class="prev-page"></span>
+                </div>
+            </a>
+            <div class="user-settings">
+                <div class="dropdown d-flex align-items-center justify-content-center">
+                    <div class="user-image-container d-flex align-items-center justify-content-center">
+                        <img
+                        src=""
+                        alt="user-image"
+                        class="user-image"
+                        />
+                    </div>
+                    <span class="welcome-message"></span>
+                    <img
+                    src="/assets/icons/arrow-down.svg"
+                    alt="arrow-icon"
+                    class="arrow-icon dropdown-toggle"
+                    />
+                </div>
+                <div class="dropdown-menu">
+                    <a href="/profile" class="link">
+                        <div class="dropdown-item" id="profile">
+                            <img
+                            src="/assets/icons/user.svg"
+                            alt="user-icon"
+                            class="user-icon"
+                            />
+                            <span class="text">Profile</span>
+                        </div>
+                    </a>
+                    <a href="" class="link">
+                        <div class="dropdown-item">
+                            <img
+                            src="/assets/icons/lock.svg"
+                            alt="lock-icon"
+                            class="lock-icon"
+                            />
+                            <span class="text two-factor-text"></span>
+                        </div>
+                    </a>
+                    <a href="/log-out" class="link">
+                        <div class="dropdown-item" id="log-out">
+                            <img
+                            src="/assets/icons/shut-down.svg"
+                            alt="log-out-icon"
+                            class="log-out-icon"
+                            />
+                            <span class="text">Logout</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+	</template>
+
+	<template id="rule-template">
+		<div class="rule d-flex align-items-center p-3 w-100">
+			<img
+			src=""
+			alt="rule-icon"
+			class="rule-icon"
+			/>
+			<div class="rule-info d-flex flex-column ">
+				<span class="title"></span>
+				<span class="description"></span>
+			</div>
+		</div>
+	</template>
+	<template id="day-template">
+		<div class="day">
+			<span class="day-number">17</span>
+			<span class="day-name">Sun</span>
+		</div>
+	</template>
+	<template id="match-record-template">
+		<div class="match-record">
+			<img
+				src="public/external/ellipse72184-z59-200w.png"
+				alt="outcome"
+				class="outcome"
+			/>
+			<div class="player1">
+				<span class="login">anaji</span>
+				<img
+				src="public/external/logo2081-wjx3-200h.png"
+				alt="player1-image"
+				class="player1-image"
+				/>
+			</div>
+			<span class="score">5 - 3</span>
+			<div class="player2">
+				<img
+				src="public/external/logo2081-4nhl-200h.png"
+				alt="player2-image"
+				class="player2-image"
+				/>
+				<span class="login">yloutfi</span>
+			</div>
+			<div class="duration-section">
+				<img
+				src="./assets/icons/timer.svg"
+				alt="duration-icon"
+				class="duration-icon"
+				/>
+				<span class="duration">00:01:45</span>
+			</div>
+		</div>
+	</template>
+</body>
+</html>

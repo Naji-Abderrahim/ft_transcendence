@@ -1,0 +1,215 @@
+:root {
+    --background-surface: #0D1E32;
+    --white: #FCFDFF;
+	  --black: rgba(7,16,27,0.7);
+    --blue: #25C4D9;
+    --grey: #2E4969;
+    --light-blue: #26F4D0;
+    --red: #FB3690;
+}
+
+@font-face {
+    font-family: 'OrbitronBold';
+    src: url('../fonts/Orbitron/Orbitron-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OrbitronSemiBold';
+    src: url('../fonts/Orbitron/Orbitron-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OrbitronExtraBold';
+    src: url('../fonts/Orbitron/Orbitron-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'OrbitronMed';
+    src: url('../fonts/Orbitron/Orbitron-Medium.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'OrbitronRegular';
+	src: url('../fonts/Orbitron/Orbitron-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'realtime gamer';
+	src: url('../fonts/realtime-gamer/RealtimeGamerRegularPersonalUse.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/* Hide default scrollbar for all browsers */
+html {
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+/* Hide default scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+  background-color: var(--background-surface) !important;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  letter-spacing: 0.1rem;
+}
+
+.container-fluid {
+  min-height: 100vh;
+}
+
+.row {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.main-view {
+  min-height: 100vh;
+  color: var(--white);
+  font-family: 'OrbitronRegular';
+  font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+.sidebar {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--blue);
+  border-top: none;
+}
+
+/* Logo section */
+.sidebar-logo {
+  width: clamp(50px, 80%, 80px);
+  height: auto;
+  object-fit: contain;
+  padding: clamp(0.5rem, 1vh, 1rem) 0;
+}
+
+/* Values section */
+.sidebar-values {
+  font-family: 'realtime gamer';
+  width: 100%;
+  flex: 1;
+  color: var(--blue);
+  font-size: clamp(0.5rem, 1vw, 0.7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-bottom: 1px solid var(--blue);
+  padding: clamp(0.5rem, 1vh, 1rem) 0;
+}
+
+.value {
+  transform: rotate(-90deg);
+  white-space: nowrap;
+  margin: clamp(0.3rem, 1vh, 0.5rem) 0;
+}
+
+/* Footer section */
+.sidebar-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 1.5vh, 1.5rem);
+  margin-top: auto;
+  padding: clamp(2rem, 3vh, 3rem) clamp(0.5rem, 1vw, 1rem);
+}
+
+.sidebar-footer-icon {
+  width: clamp(16px, 1.5vw, 20px);
+  height: auto;
+  cursor: pointer;
+}
+
+.sidebar-footer-copyrights {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'OrbitronRegular';
+  font-size: clamp(0.3rem, 0.8vw, 0.4rem);
+  letter-spacing: 0.05rem;
+  color: var(--white);
+}
+
+.copyright-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: 'OrbitronRegular';
+  font-size: clamp(0.8rem , 1.5vw, 1rem);
+  gap: clamp(0.1rem, 0.3vw, 0.2rem);
+}
+
+.copyright-text {
+  font-size: clamp(0.25rem, 0.8vw, 0.35rem);
+}
+
+.copyright-icon {
+  width: clamp(8px, 1.2vw, 12px);
+  height: auto;
+}
+
+/* Media queries for extreme screen sizes */
+@media screen and (max-height: 500px) {
+  .sidebar-logo {
+    width: clamp(40px, 70%, 60px);
+    padding: 0.3rem 0;
+  }
+  
+  .sidebar-footer {
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+  }
+  
+  .sidebar-values {
+    font-size: 0.4rem;
+    padding: 0.2rem 0;
+  }
+  
+  .value {
+    margin: 0.2rem 0;
+  }
+  
+  .sidebar-footer-icon {
+    width: 14px;
+  }
+  
+  .sidebar-footer-copyrights {
+    font-size: 0.35rem;
+  }
+  
+  .copyright-icon {
+    width: 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar-values {
+    font-size: 0.6rem;
+  }
+}
+
+
+

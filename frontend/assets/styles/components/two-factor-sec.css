@@ -1,0 +1,69 @@
+@import url("/assets/styles/components/scan.css");
+@import url("/assets/styles/components/verify.css");
+
+a {
+    text-decoration: none !important;
+}
+
+.two-factor-section {
+	width: min(500px, 65%);
+	margin-left: 5% !important;
+	background-color: var(--black);
+	border-radius: 10px;
+}
+
+.step-icon-container{
+	width: clamp(60px, 8vw, 80px);
+	height: clamp(60px, 8vw, 80px);
+	border: 2px solid var(--blue);
+	border-radius: 50%;
+	padding: 0.5rem;
+}
+
+.step-icon{
+	width: 80%;
+	object-fit: contain;
+}
+
+.heading {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	color: var(--white);
+	font-family: 'OrbitronRegular';
+	width: 80%;
+}
+
+.heading .title {
+	font-size: min(1.2rem, 1.5vw);
+	font-weight: 700;
+	white-space: nowrap;
+}
+
+.heading .description {
+	font-size: min(0.8rem, 1vw);
+	white-space: nowrap;
+}
+
+.button {
+	position : relative;
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+	width: 80%;
+    padding: 0.8rem 1rem;
+    border-radius: 0.5rem;
+    font-family: 'OrbitronRegular';
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+    margin-top: 1rem;
+    transition: transform 0.3s ease;
+	cursor: pointer;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+.active-button {
+	scale: 1.1;
+}
